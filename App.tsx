@@ -39,7 +39,7 @@ const App: React.FC = () => {
       {/* Logo & Info Bar */}
       <div className="fixed top-10 left-10 z-20 flex items-center gap-6 pointer-events-none">
         <div className="flex flex-col gap-1">
-          <img src="/assets/logo.png" alt="정자유스센터 로고" className="h-10 w-auto object-contain opacity-90" />
+          <img src={import.meta.env.BASE_URL + "assets/logo.png"} alt="정자유스센터 로고" className="h-10 w-auto object-contain opacity-90" />
           <div className="flex items-center gap-3">
             <div className="w-6 h-[1px] bg-[#5d4037]/30" />
             <span className="font-display text-[9px] tracking-[0.4em] text-[#5d4037]/50 uppercase">Hajin Choi • 2025 Archive</span>
@@ -73,7 +73,7 @@ function renderSlide(id: SlideId) {
           </div>
           <div className="flex-1 relative overflow-hidden group">
             <img
-              src="/assets/summer_camp.jpg"
+              src={import.meta.env.BASE_URL + "assets/summer_camp.jpg"}
               alt="Summer Reading Camp"
               className="w-full h-full object-cover transition-transform duration-[2000ms] group-hover:scale-110"
             />
@@ -89,64 +89,22 @@ function renderSlide(id: SlideId) {
     case SlideId.PROFILE:
       return (
         <div className="h-full grid grid-cols-1 md:grid-cols-12 reveal">
-          <div className="md:col-span-5 relative overflow-hidden group">
+          <div className="md:col-span-12 lg:col-span-5 relative overflow-hidden group">
             <img
-              src="/assets/winter_meeting.jpg"
+              src={import.meta.env.BASE_URL + "assets/winter_meeting.jpg"}
               alt="Winter Planning Meeting"
               className="w-full h-full object-cover grayscale-[0.5] group-hover:grayscale-0 transition-all duration-1000"
             />
             <div className="absolute top-8 left-8 text-white/80 z-20">
               <span className="text-[9px] uppercase tracking-[0.5em] font-bold">In Action</span>
             </div>
-            <div className="absolute inset-0 bg-gradient-to-t from-[#1a237e]/40 to-transparent opacity-60" />
           </div>
-          <div className="md:col-span-7 flex flex-col justify-center px-12 md:px-24 py-12 bg-white">
-            <div className="max-w-2xl space-y-8">
-              <div className="space-y-2">
-                <span className="text-[#1a237e] font-bold tracking-[0.4em] text-[10px] uppercase opacity-60">The Visionary</span>
-                <h2 className="font-serif text-4xl md:text-6xl text-[#5d4037] leading-tight font-bold">
-                  문장의 힘을 믿는,<br />
-                  <span className="text-[#1a237e] italic font-normal">도서관 기획자</span>
-                </h2>
-              </div>
-
-              <div className="space-y-6 text-[#5d4037]/90 text-base md:text-lg leading-relaxed font-serif">
-                <p>
-                  책 속의 문장들에 매료되어 문예창작을 전공했지만, 텍스트 안에만 갇혀 있고 싶지는 않았습니다. 책이 세상으로 나와 사람들과 어떻게 호흡하는지 궁금해 동틀에 지원하게 되었습니다.
-                </p>
-                <p className="opacity-70 text-sm md:text-base border-l-2 border-[#1a237e]/20 pl-6 italic">
-                  1년간의 활동을 통해 도서관은 단순한 독서실이 아닌, 전 세대가 어우러지는 <strong>'역동적인 커뮤니티 공간'</strong>임을 체감했습니다. 직접 기획하고 실행하며 느꼈던 뿌듯함은 저에게 새로운 원동력이 되었습니다.
-                </p>
-              </div>
-
-              <div className="pt-10 grid grid-cols-3 gap-8 border-t border-[#5d4037]/10">
-                <div className="space-y-2">
-                  <h4 className="text-[10px] font-bold text-[#1a237e] uppercase tracking-[0.2em] opacity-50">Department</h4>
-                  <p className="font-serif text-sm font-bold opacity-80">문예창작학과</p>
-                </div>
-                <div className="space-y-2">
-                  <h4 className="text-[10px] font-bold text-[#1a237e] uppercase tracking-[0.2em] opacity-50">Division</h4>
-                  <p className="font-serif text-sm font-bold opacity-80">홍보 & 기획팀</p>
-                </div>
-                <div className="space-y-2">
-                  <h4 className="text-[10px] font-bold text-[#1a237e] uppercase tracking-[0.2em] opacity-50">Strength</h4>
-                  <p className="font-serif text-sm font-bold opacity-80">브랜딩 / 스토리텔링</p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      );
-
-    case SlideId.MOTIVATION:
-      return (
-        <div className="h-full grid grid-cols-1 md:grid-cols-2 reveal overflow-hidden">
-          <div className="flex flex-col justify-center px-12 md:px-24 space-y-10 relative z-10 bg-[#fdfbf7]/80 backdrop-blur-sm">
-            <div>
-              <span className="font-serif text-[#1a237e] text-xs font-bold mb-3 block tracking-[0.4em] uppercase opacity-60 underline underline-offset-8">03 Beyond Text</span>
-              <h2 className="font-serif text-4xl md:text-5xl text-[#5d4037] leading-[1.2] font-bold">
-                텍스트를 넘어,<br />
-                <span className="text-[#1a237e] italic font-normal">현장으로 나아간 이유</span>
+          <div className="md:col-span-12 lg:col-span-7 flex flex-col justify-center px-12 md:px-24 bg-[#fdfbf7] z-10">
+            <div className="mb-12">
+              <p className="text-[10px] text-[#1a237e] font-extrabold tracking-[0.5em] uppercase mb-4">The Curator</p>
+              <h2 className="font-serif text-4xl md:text-6xl text-[#5d4037] font-bold leading-tight">
+                기록하는 마음,<br />
+                <span className="text-[#1a237e] italic font-normal">최하진</span>입니다.
               </h2>
             </div>
             <div className="space-y-6 text-[#5d4037]/80 text-base leading-relaxed max-w-md font-serif">
@@ -160,9 +118,9 @@ function renderSlide(id: SlideId) {
               </div>
             </div>
           </div>
-          <div className="relative group">
+          <div className="relative group lg:block hidden">
             <img
-              src="/assets/writer_meeting.jpg"
+              src={import.meta.env.BASE_URL + "assets/writer_meeting.jpg"}
               alt="Meeting with Canadian Writer"
               className="w-full h-full object-cover transition-transform duration-[3000ms] group-hover:scale-105"
             />
@@ -176,7 +134,7 @@ function renderSlide(id: SlideId) {
 
     case SlideId.STRATEGY:
       return (
-        <div className="h-full p-12 md:px-24 flex flex-col justify-center reveal bg-[#fdfbf7]">
+        <div className="h-full p-12 md:px-24 flex flex-col justify-center reveal bg-[#fdfbf7] overflow-y-auto">
           <div className="mb-14 text-center max-w-3xl mx-auto">
             <h2 className="font-serif text-4xl md:text-5xl text-[#5d4037] mb-4 font-bold tracking-tight">동틀에서의 세 계절</h2>
             <div className="w-16 h-[2px] bg-[#1a237e] mx-auto mb-4" />
@@ -185,9 +143,9 @@ function renderSlide(id: SlideId) {
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
             {[
-              { season: 'Spring', title: '봄: 시작의 설렘', desc: '15기 단원들과의 첫 만남 "동틀의 봄". 도서관의 새로운 가능성을 꿈꾸며 기획의 기초를 다졌습니다.', color: 'border-[#5d4037]/20', img: '/assets/summer_camp.jpg' },
-              { season: 'Summer', title: '여름: 기획의 실전', desc: '직접 기획한 여름학교 독서캠프. "진짜 vs AI 이미지 구분하기" 등 창의적인 부스를 통해 아이들의 몰입을 이끌어냈습니다.', color: 'border-[#1a237e] bg-[#1a237e]/5 scale-105 shadow-2xl z-10', img: '/assets/summer_booth.jpg' },
-              { season: 'Winter', title: '겨울: 배움의 성과', desc: '인문학 강연 "정자동 카페거리" 기획 등 한 해의 활동을 마무리하며 도서관 기획자로서의 역량을 집약했습니다.', color: 'border-[#5d4037]/20', img: '/assets/humanities_lecture.jpg' }
+              { season: 'Spring', title: '봄: 시작의 설렘', desc: '15기 단원들과의 첫 만남 "동틀의 봄". 도서관의 새로운 가능성을 꿈꾸며 기획의 기초를 다졌습니다.', color: 'border-[#5d4037]/20', img: `${import.meta.env.BASE_URL}assets/summer_camp.jpg` },
+              { season: 'Summer', title: '여름: 기획의 실전', desc: '직접 기획한 여름학교 독서캠프. "진짜 vs AI 이미지 구분하기" 등 창의적인 부스를 통해 아이들의 몰입을 이끌어냈습니다.', color: 'border-[#1a237e] bg-[#1a237e]/5 scale-105 shadow-2xl z-10', img: `${import.meta.env.BASE_URL}assets/summer_booth.jpg` },
+              { season: 'Winter', title: '겨울: 배움의 성과', desc: '인문학 강연 "정자동 카페거리" 기획 등 한 해의 활동을 마무리하며 도서관 기획자로서의 역량을 집약했습니다.', color: 'border-[#5d4037]/20', img: `${import.meta.env.BASE_URL}assets/humanities_lecture.jpg` }
             ].map((item, idx) => (
               <div key={idx} className={`p-8 border transition-all duration-500 hover:-translate-y-2 ${item.color} relative group overflow-hidden`}>
                 <div className="absolute top-0 left-0 w-full h-24 opacity-10 group-hover:opacity-20 transition-opacity">
@@ -221,13 +179,13 @@ function renderSlide(id: SlideId) {
           {/* 다이나믹 배경 레이어 */}
           <div className="absolute inset-0 z-0 opacity-20 flex">
             <div className="flex-1 h-full overflow-hidden border-r border-white/5">
-              <img src="/assets/summer_camp_hall.jpg" className="w-full h-full object-cover grayscale" alt="" />
+              <img src={import.meta.env.BASE_URL + "assets/summer_camp_hall.jpg"} className="w-full h-full object-cover grayscale" alt="" />
             </div>
             <div className="flex-1 h-full overflow-hidden border-r border-white/5 hidden md:block">
-              <img src="/assets/summer_camp_snacks.jpg" className="w-full h-full object-cover grayscale" alt="" />
+              <img src={import.meta.env.BASE_URL + "assets/summer_camp_snacks.jpg"} className="w-full h-full object-cover grayscale" alt="" />
             </div>
             <div className="flex-1 h-full overflow-hidden md:block hidden">
-              <img src="/assets/summer_camp_stage.jpg" className="w-full h-full object-cover grayscale" alt="" />
+              <img src={import.meta.env.BASE_URL + "assets/summer_camp_stage.jpg"} className="w-full h-full object-cover grayscale" alt="" />
             </div>
           </div>
           <div className="absolute inset-0 bg-gradient-to-t from-[#1a237e] via-black/40 to-black z-[1]" />
@@ -244,42 +202,34 @@ function renderSlide(id: SlideId) {
               <div className="lg:col-span-8">
                 <div className="relative aspect-[16/9] w-full bg-black shadow-[0_0_100px_rgba(26,35,126,0.3)] border border-white/10 overflow-hidden group">
                   <video
-                    src="/assets/video1.mp4"
+                    src={import.meta.env.BASE_URL + "assets/video1.mp4"}
                     autoPlay
                     muted
                     loop
                     playsInline
                     className="w-full h-full object-cover"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-tr from-[#1a237e]/20 to-transparent mix-blend-overlay" />
-                  <div className="absolute bottom-6 right-6 flex items-center gap-3">
-                    <div className="w-2 h-2 rounded-full bg-red-600 animate-pulse" />
-                    <span className="text-[10px] font-bold tracking-[0.4em] uppercase text-white/80">Archived 2025.07</span>
+                  <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+                    <button className="bg-white text-black p-4 rounded-full shadow-2xl scale-90 group-hover:scale-100 transition-transform">
+                      <svg className="w-8 h-8" fill="currentColor" viewBox="0 0 24 24"><path d="M8 5v14l11-7z" /></svg>
+                    </button>
                   </div>
                 </div>
               </div>
-
               <div className="lg:col-span-4 space-y-10">
                 <p className="text-[#fdfbf7]/80 text-base md:text-lg leading-relaxed font-serif italic">
                   여름학교 독서캠프의 현장감을 담기 위해 전 과정을 기록했습니다. <br /><br />
                   <span className="text-white font-bold text-xl block mb-2 underline decoration-[#1a237e] underline-offset-8">"영상 촬영부터 편집까지 직접 주도"</span>
                   긴 대기 시간을 아이들의 환호로 바꾸는 아카이벤팅의 힘을 실천했습니다.
                 </p>
-
-                <div className="space-y-4">
-                  <div className="bg-white/5 backdrop-blur-md p-6 border border-white/10 flex justify-between items-center group hover:bg-white/10 transition-colors">
-                    <div>
-                      <p className="text-[10px] uppercase tracking-widest text-white/40 mb-1">Stage</p>
-                      <p className="font-serif text-sm">연합 독서 프로젝트</p>
-                    </div>
-                    <div className="w-8 h-[1px] bg-white/20 group-hover:w-12 transition-all" />
+                <div className="grid grid-cols-2 gap-4">
+                  <div className="p-4 bg-white/5 border border-white/10 rounded-sm">
+                    <p className="text-[10px] text-white/40 uppercase tracking-widest mb-1">Equipment</p>
+                    <p className="text-xs font-serif">Sony A7C II / Davinci Resolve</p>
                   </div>
-                  <div className="bg-white/5 backdrop-blur-md p-6 border border-white/10 flex justify-between items-center group hover:bg-white/10 transition-colors">
-                    <div>
-                      <p className="text-[10px] uppercase tracking-widest text-white/40 mb-1">Role</p>
-                      <p className="font-serif text-sm font-bold text-[#1a237e]">기획 및 총괄 편집</p>
-                    </div>
-                    <div className="w-8 h-[1px] bg-white/20 group-hover:w-12 transition-all" />
+                  <div className="p-4 bg-white/5 border border-white/10 rounded-sm">
+                    <p className="text-[10px] text-white/40 uppercase tracking-widest mb-1">Role</p>
+                    <p className="text-xs font-serif">Director & Editor</p>
                   </div>
                 </div>
               </div>
@@ -290,20 +240,17 @@ function renderSlide(id: SlideId) {
 
     case SlideId.RESULT:
       return (
-        <div className="h-full p-12 md:px-24 flex flex-col justify-center reveal bg-white overflow-y-auto">
-          <div className="mb-14 border-b border-[#5d4037]/10 pb-8 flex justify-between items-end">
-            <div>
-              <h2 className="font-serif text-4xl text-[#5d4037] mb-3 font-bold underline decoration-[#1a237e]/20 underline-offset-8">기획과 감각의 기록</h2>
-              <p className="text-sm text-[#5d4037]/50 font-serif tracking-[0.2em] italic uppercase">Action & Creative Archive</p>
-            </div>
-            <div className="text-[10px] font-bold text-[#1a237e] tracking-[0.3em] uppercase">2025 Archive Collection</div>
+        <div className="h-full p-12 md:px-24 flex flex-col justify-center reveal bg-[#fdfbf7] overflow-y-auto">
+          <div className="mb-14">
+            <h2 className="font-serif text-4xl md:text-5xl text-[#5d4037] mb-4 font-bold tracking-tight">주요 프로젝트 결과물</h2>
+            <div className="w-16 h-[2px] bg-[#1a237e] mb-4" />
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
             {/* 1. 여름 부스 운영 */}
             <div className="group space-y-4">
               <div className="aspect-[4/5] bg-[#fdfbf7] p-3 border border-[#5d4037]/10 shadow-sm transition-all duration-700 group-hover:shadow-xl group-hover:-translate-y-1 overflow-hidden relative">
-                <img src="/assets/summer_action.jpg" className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700" alt="Activity" />
+                <img src={import.meta.env.BASE_URL + "assets/summer_action.jpg"} className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700" alt="Activity" />
                 <div className="absolute top-4 left-4 bg-[#1a237e] text-white text-[8px] font-bold px-2 py-0.5 uppercase tracking-tighter shadow-md">Project 01</div>
               </div>
               <div className="space-y-1">
@@ -315,7 +262,7 @@ function renderSlide(id: SlideId) {
             {/* 2. 캔뱃지 디자인 */}
             <div className="group space-y-4">
               <div className="aspect-[4/5] bg-[#fdfbf7] p-3 border border-[#5d4037]/10 shadow-sm transition-all duration-700 group-hover:shadow-xl group-hover:-translate-y-1 overflow-hidden relative">
-                <img src="/assets/summer_badge.jpg" className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700" alt="Badge" />
+                <img src={import.meta.env.BASE_URL + "assets/summer_badge.jpg"} className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700" alt="Badge" />
                 <div className="absolute top-4 left-4 bg-[#1a237e] text-white text-[8px] font-bold px-2 py-0.5 uppercase tracking-tighter shadow-md">Project 02</div>
               </div>
               <div className="space-y-1">
@@ -328,10 +275,10 @@ function renderSlide(id: SlideId) {
             <div className="group space-y-4">
               <div className="aspect-[4/5] bg-[#fdfbf7] p-3 border border-[#5d4037]/10 shadow-sm transition-all duration-700 group-hover:shadow-xl group-hover:-translate-y-1 overflow-hidden relative">
                 <div className="w-full h-full grid grid-cols-2 grid-rows-2 gap-1 grayscale group-hover:grayscale-0 transition-all duration-700">
-                  <img src="/assets/001.png" className="w-full h-full object-cover" alt="Card News 1" />
-                  <img src="/assets/002.png" className="w-full h-full object-cover" alt="Card News 2" />
-                  <img src="/assets/003.png" className="w-full h-full object-cover" alt="Card News 3" />
-                  <img src="/assets/004.png" className="w-full h-full object-cover" alt="Card News 4" />
+                  <img src={import.meta.env.BASE_URL + "assets/001.png"} className="w-full h-full object-cover" alt="Card News 1" />
+                  <img src={import.meta.env.BASE_URL + "assets/002.png"} className="w-full h-full object-cover" alt="Card News 2" />
+                  <img src={import.meta.env.BASE_URL + "assets/003.png"} className="w-full h-full object-cover" alt="Card News 3" />
+                  <img src={import.meta.env.BASE_URL + "assets/004.png"} className="w-full h-full object-cover" alt="Card News 4" />
                 </div>
                 <div className="absolute top-4 left-4 bg-[#1a237e] text-white text-[8px] font-bold px-2 py-0.5 uppercase tracking-tighter shadow-md">Project 03</div>
                 <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center p-6 text-center">
@@ -362,7 +309,7 @@ function renderSlide(id: SlideId) {
           {/* Decorative Instagram Style Card News Element */}
           <div className="absolute top-32 right-12 w-64 h-80 bg-white shadow-2xl rounded-2xl p-6 rotate-6 hidden xl:block border border-[#1a237e]/10 group hover:rotate-0 transition-transform duration-700">
             <div className="w-full h-48 bg-[#fdfbf7] rounded-lg mb-4 flex items-center justify-center overflow-hidden relative">
-              <img src="/assets/006.png" className="w-full h-full object-cover opacity-80 group-hover:opacity-100 transition-opacity" alt="Card News Detail" />
+              <img src={import.meta.env.BASE_URL + "assets/006.png"} className="w-full h-full object-cover opacity-80 group-hover:opacity-100 transition-opacity" alt="Card News Detail" />
               <div className="absolute inset-0 bg-[#1a237e]/10 mix-blend-multiply" />
               <div className="absolute inset-0 flex items-center justify-center">
                 <div className="text-center z-10 px-4 bg-white/80 backdrop-blur-sm py-2 rounded shadow-lg translate-y-4 group-hover:translate-y-0 transition-transform">
@@ -399,7 +346,7 @@ function renderSlide(id: SlideId) {
                 {/* Profile Polaroid */}
                 <div className="relative group mx-auto">
                   <div className="relative w-56 h-72 rotate-[-3deg] group-hover:rotate-0 transition-all duration-1000 border-8 border-white shadow-2xl overflow-hidden bg-white">
-                    <img src="/assets/summer_polaroid.jpg" className="w-full h-full object-cover" alt="Team Polaroid" />
+                    <img src={import.meta.env.BASE_URL + "assets/summer_polaroid.jpg"} className="w-full h-full object-cover" alt="Team Polaroid" />
                     <div className="absolute inset-0 bg-black/5" />
                     <div className="absolute bottom-4 left-0 right-0 text-center">
                       <p className="font-serif italic text-[#1a237e] text-sm font-bold opacity-0 group-hover:opacity-100 transition-opacity">#동틀의_추억</p>
@@ -410,32 +357,12 @@ function renderSlide(id: SlideId) {
                 {/* Curation Photo */}
                 <div className="relative group mx-auto">
                   <div className="relative w-56 h-72 rotate-[3deg] group-hover:rotate-0 transition-all duration-1000 border-8 border-white shadow-2xl overflow-hidden bg-white">
-                    <img src="/assets/001.png" className="w-full h-full object-cover" alt="Book Curation" />
+                    <img src={import.meta.env.BASE_URL + "assets/001.png"} className="w-full h-full object-cover" alt="Book Curation" />
                     <div className="absolute inset-x-0 bottom-0 h-1/3 bg-gradient-to-t from-black/20 to-transparent" />
                   </div>
                   <div className="absolute -top-4 -right-4 bg-[#1a237e] text-white text-[8px] font-bold px-3 py-1 rounded-full uppercase tracking-tighter z-10 shadow-lg">Curation Artist</div>
                 </div>
               </div>
-
-              <div className="flex flex-col items-center gap-6 relative group pb-12">
-                <div className="w-20 h-20 border-2 border-[#1a237e] rotate-45 flex items-center justify-center group-hover:bg-[#1a237e] transition-all duration-700 ease-[cubic-bezier(0.16,1,0.3,1)] overflow-hidden">
-                  <span className="font-serif text-3xl font-bold -rotate-45 text-[#1a237e] group-hover:text-white transition-colors duration-500">최</span>
-                  <div className="absolute inset-x-0 bottom-0 h-[0%] bg-white/20 group-hover:h-[100%] transition-all duration-1000" />
-                </div>
-                <div className="text-center">
-                  <h3 className="text-3xl font-serif font-bold text-[#5d4037] mb-2 tracking-[0.5em]">최 하 진</h3>
-                  <p className="font-sans text-[10px] tracking-[0.6em] text-[#1a237e] uppercase font-extrabold opacity-70">Librarian Supporter • Editor</p>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div className="absolute bottom-12 w-full px-24 flex justify-between items-center text-[9px] font-extrabold tracking-[0.4em] text-[#5d4037]/40 uppercase">
-            <span className="hover:text-[#1a237e] transition-colors cursor-none">Instagram @dongteul.lib</span>
-            <div className="flex gap-10 items-center">
-              <span>Dong-tle Archive</span>
-              <div className="w-[1px] h-4 bg-[#5d4037]/20" />
-              <span>2025 Masterpiece</span>
             </div>
           </div>
         </div>
