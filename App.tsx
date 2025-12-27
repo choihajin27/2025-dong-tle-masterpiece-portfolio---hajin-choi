@@ -145,7 +145,7 @@ function renderSlide(id: SlideId) {
             {[
               { season: 'Spring', title: '봄: 시작의 설렘', desc: '15기 단원들과의 첫 만남 "동틀의 봄". 도서관의 새로운 가능성을 꿈꾸며 기획의 기초를 다졌습니다.', color: 'border-[#5d4037]/20', img: `${import.meta.env.BASE_URL}assets/summer_camp.jpg` },
               { season: 'Summer', title: '여름: 기획의 실전', desc: '직접 기획한 여름학교 독서캠프. "진짜 vs AI 이미지 구분하기" 등 창의적인 부스를 통해 아이들의 몰입을 이끌어냈습니다.', color: 'border-[#1a237e] bg-[#1a237e]/5 scale-105 shadow-2xl z-10', img: `${import.meta.env.BASE_URL}assets/summer_booth.jpg` },
-              { season: 'Winter', title: '겨울: 배움의 성과', desc: '인문학 강연 "정자동 카페거리" 기획 등 한 해의 활동을 마무리하며 도서관 기획자로서의 역량을 집약했습니다.', color: 'border-[#5d4037]/20', img: `${import.meta.env.BASE_URL}assets/humanities_lecture.jpg` }
+              { season: 'Winter', title: '겨울: 나눔의 기쁨', desc: '겨울학교 크리스마스 기획. 스탬프 투어 디자인과 소망 트리 등 아이들과 함께하는 따뜻한 도서관 문화를 기획했습니다.', color: 'border-[#5d4037]/20', img: `${import.meta.env.BASE_URL}assets/winter_tree.jpg` }
             ].map((item, idx) => (
               <div key={idx} className={`p-8 border transition-all duration-500 hover:-translate-y-2 ${item.color} relative group overflow-hidden`}>
                 <div className="absolute top-0 left-0 w-full h-24 opacity-10 group-hover:opacity-20 transition-opacity">
@@ -246,7 +246,7 @@ function renderSlide(id: SlideId) {
             <div className="w-16 h-[2px] bg-[#1a237e] mb-4" />
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             {/* 1. 여름 부스 운영 */}
             <div className="group space-y-4">
               <div className="aspect-[4/5] bg-[#fdfbf7] p-3 border border-[#5d4037]/10 shadow-sm transition-all duration-700 group-hover:shadow-xl group-hover:-translate-y-1 overflow-hidden relative">
@@ -288,6 +288,28 @@ function renderSlide(id: SlideId) {
               <div className="space-y-1">
                 <h4 className="font-serif text-base text-[#1a237e] font-bold">10월 카드뉴스 기획 및 편집</h4>
                 <p className="text-[11px] text-[#5d4037]/60 font-serif leading-relaxed">바다 테마의 북 큐레이션 카드뉴스를 제작하여, 도서관의 콘텐츠를 전 세대가 공감할 수 있는 시각 언어로 풀어냈습니다.</p>
+              </div>
+            </div>
+
+            {/* 4. 겨울 크리스마스 기획 */}
+            <div className="group space-y-4">
+              <div className="aspect-[4/5] bg-[#fdfbf7] p-3 border border-[#5d4037]/10 shadow-sm transition-all duration-700 group-hover:shadow-xl group-hover:-translate-y-1 overflow-hidden relative">
+                <div className="w-full h-full grid grid-cols-2 grid-rows-2 gap-1 grayscale group-hover:grayscale-0 transition-all duration-700">
+                  <img src={import.meta.env.BASE_URL + "assets/winter_card.jpg"} className="w-full h-full object-cover" alt="Winter Card" />
+                  <img src={import.meta.env.BASE_URL + "assets/winter_tree.jpg"} className="w-full h-full object-cover" alt="Winter Tree" />
+                  <img src={import.meta.env.BASE_URL + "assets/winter_children.jpg"} className="w-full h-full object-cover" alt="Winter Children" />
+                  <div className="bg-[#1a237e]/5 flex items-center justify-center">
+                    <span className="text-[10px] text-[#1a237e]/40 font-serif italic">Christmas</span>
+                  </div>
+                </div>
+                <div className="absolute top-4 left-4 bg-[#1a237e] text-white text-[8px] font-bold px-2 py-0.5 uppercase tracking-tighter shadow-md">Project 04</div>
+                <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center p-6 text-center">
+                  <p className="text-white text-[10px] font-bold italic border-y border-white/30 py-4">"겨울: 따뜻한 나눔의 도서관"</p>
+                </div>
+              </div>
+              <div className="space-y-1">
+                <h4 className="font-serif text-base text-[#1a237e] font-bold">겨울학교 크리스마스 기획</h4>
+                <p className="text-[11px] text-[#5d4037]/60 font-serif leading-relaxed">스탬프 투어 카드 디자인부터 소망 트리 설치까지, 겨울 도서관의 활기를 더하는 공간 기획을 진행했습니다.</p>
               </div>
             </div>
           </div>
