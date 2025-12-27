@@ -113,20 +113,19 @@ function renderSlide(id: SlideId) {
               </p>
               <div className="p-8 border-l-[3px] border-[#1a237e] bg-white shadow-xl shadow-[#1a237e]/5 italic">
                 <p className="text-base md:text-lg leading-relaxed text-[#5d4037]">
-                  "캐나다 작가와의 만남 등 글로벌한 문화 행사를 보며 깨달았습니다. 도서관은 단순히 책을 빌리는 곳이 아니라, 전 세계의 지성과 로컬의 마음이 만나는 플랫폼이라는 것을요."
+                  "도서관은 단순히 책을 빌리는 곳이 아니라, 지역 공동체의 지성과 감성이 만나는 소중한 플랫폼이라는 것을 1년의 활동을 통해 깊이 깨달았습니다."
                 </p>
               </div>
             </div>
           </div>
-          <div className="relative group lg:block hidden">
+          <div className="md:col-span-12 lg:col-span-5 relative overflow-hidden group">
             <img
-              src={import.meta.env.BASE_URL + "assets/writer_meeting.jpg"}
-              alt="Meeting with Canadian Writer"
-              className="w-full h-full object-cover transition-transform duration-[3000ms] group-hover:scale-105"
+              src={import.meta.env.BASE_URL + "assets/winter_meeting.jpg"}
+              alt="Winter Planning Meeting"
+              className="w-full h-full object-cover grayscale-[0.5] group-hover:grayscale-0 transition-all duration-1000"
             />
-            <div className="absolute inset-0 bg-[#5d4037]/10 mix-blend-multiply opacity-20" />
-            <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
-              <div className="w-[80%] h-[80%] border border-white/30 backdrop-blur-[1px]" />
+            <div className="absolute top-8 left-8 text-white/80 z-20">
+              <span className="text-[9px] uppercase tracking-[0.5em] font-bold">In Action</span>
             </div>
           </div>
         </div>
@@ -134,39 +133,50 @@ function renderSlide(id: SlideId) {
 
     case SlideId.STRATEGY:
       return (
-        <div className="h-full p-12 md:px-24 flex flex-col justify-center reveal bg-[#fdfbf7] overflow-y-auto">
-          <div className="mb-14 text-center max-w-3xl mx-auto">
-            <h2 className="font-serif text-4xl md:text-5xl text-[#5d4037] mb-4 font-bold tracking-tight">동틀에서의 세 계절</h2>
-            <div className="w-16 h-[2px] bg-[#1a237e] mx-auto mb-4" />
-            <p className="text-[#5d4037]/60 text-sm md:text-base font-serif italic tracking-wide">배움의 봄에서 성장의 겨울까지, 하진의 기록</p>
+        <div className="h-full grid grid-cols-1 lg:grid-cols-12 reveal bg-[#fdfbf7] overflow-y-auto">
+          {/* Left: Interactive Visual */}
+          <div className="lg:col-span-4 relative overflow-hidden group border-r border-[#1a237e]/5">
+            <img
+              src={import.meta.env.BASE_URL + "assets/writer_meeting.jpg"}
+              alt="Strategy & Action"
+              className="w-full h-full object-cover transition-transform duration-[4000ms] group-hover:scale-110"
+            />
+            <div className="absolute inset-0 bg-[#1a237e]/20 mix-blend-multiply transition-opacity group-hover:opacity-40" />
+            <div className="absolute inset-0 p-12 flex flex-col justify-end text-white z-10">
+              <span className="text-[10px] font-bold tracking-[0.4em] uppercase mb-4 opacity-70">Case Study</span>
+              <h3 className="font-serif text-2xl md:text-3xl font-bold leading-tight mb-4">"글로벌과 로컬이<br />만나는 지점"</h3>
+              <p className="text-[11px] font-serif italic opacity-60">캐나다 작가 초청 강연 등 하반기 주요 활동의 현장</p>
+            </div>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
-            {[
-              { season: 'Spring', title: '봄: 시작의 설렘', desc: '15기 단원들과의 첫 만남 "동틀의 봄". 도서관의 새로운 가능성을 꿈꾸며 기획의 기초를 다졌습니다.', color: 'border-[#5d4037]/20', img: `${import.meta.env.BASE_URL}assets/summer_camp.jpg` },
-              { season: 'Summer', title: '여름: 기획의 실전', desc: '직접 기획한 여름학교 독서캠프. "진짜 vs AI 이미지 구분하기" 등 창의적인 부스를 통해 아이들의 몰입을 이끌어냈습니다.', color: 'border-[#1a237e] bg-[#1a237e]/5 scale-105 shadow-2xl z-10', img: `${import.meta.env.BASE_URL}assets/summer_booth.jpg` },
-              { season: 'Winter', title: '겨울: 나눔의 기쁨', desc: '겨울학교 크리스마스 기획. 스탬프 투어 디자인과 소망 트리 등 아이들과 함께하는 따뜻한 도서관 문화를 기획했습니다.', color: 'border-[#5d4037]/20', img: `${import.meta.env.BASE_URL}assets/winter_tree.jpg` }
-            ].map((item, idx) => (
-              <div key={idx} className={`p-8 border transition-all duration-500 hover:-translate-y-2 ${item.color} relative group overflow-hidden`}>
-                <div className="absolute top-0 left-0 w-full h-24 opacity-10 group-hover:opacity-20 transition-opacity">
-                  <img src={item.img} className="w-full h-full object-cover" alt="" />
+          {/* Right: Seasons Grid */}
+          <div className="lg:col-span-8 p-12 md:p-20 flex flex-col justify-center">
+            <div className="mb-12">
+              <h2 className="font-serif text-4xl md:text-5xl text-[#5d4037] mb-4 font-bold tracking-tight">동틀에서의 세 계절</h2>
+              <div className="w-16 h-[2px] bg-[#1a237e] mb-4" />
+              <p className="text-[#5d4037]/60 text-sm font-serif italic">배움의 봄에서 성장의 겨울까지, 도서관 기획자 최하진의 기록</p>
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+              {[
+                { season: 'Spring', title: '봄: 기획의 토대', desc: '15기 단원들과의 첫 만남 "동틀의 봄". 도서관의 새로운 가능성을 꿈꾸며 기획의 기초를 다졌습니다.', color: 'border-[#5d4037]/20', img: `${import.meta.env.BASE_URL}assets/summer_prep.jpg` },
+                { season: 'Summer', title: '여름: 기획의 실전', desc: '직접 기획한 여름학교 독서캠프. "진짜 vs AI 이미지 구분하기" 등 창의적인 부스를 통해 아이들의 몰입을 이끌어냈습니다.', color: 'border-[#1a237e] bg-[#1a237e]/5 shadow-xl scale-[1.02] z-10', img: `${import.meta.env.BASE_URL}assets/summer_booth.jpg` },
+                { season: 'Winter', title: '겨울: 배움의 성과', desc: '동틀의 겨울, 인문학 강연, 정자동 카페거리 기획 등 한 해의 활동을 마무리하며 도서관 기획자로서의 역량을 집약했습니다.', color: 'border-[#5d4037]/20', img: `${import.meta.env.BASE_URL}assets/winter_tree.jpg` }
+              ].map((item, idx) => (
+                <div key={idx} className={`p-6 border transition-all duration-500 hover:-translate-y-1 ${item.color} relative group overflow-hidden bg-white/50`}>
+                  <div className="absolute top-0 left-0 w-full h-1 bg-[#1a237e] transform scale-x-0 group-hover:scale-x-100 transition-transform origin-left" />
+                  <span className="font-bold text-[#1a237e]/30 text-[9px] uppercase tracking-[0.4em] mb-3 block">0{idx + 1}</span>
+                  <h3 className="font-serif text-lg font-bold mb-3 text-[#5d4037]">{item.title}</h3>
+                  <p className="text-[11px] text-[#5d4037]/70 leading-relaxed font-serif">
+                    {item.desc}
+                  </p>
                 </div>
-                <span className="font-bold text-[#1a237e]/30 text-[10px] uppercase tracking-[0.4em] mb-4 block group-hover:text-[#1a237e] transition-colors relative z-10">Season 0{idx + 1} • {item.season}</span>
-                <h3 className="font-serif text-xl md:text-2xl font-bold mb-4 text-[#5d4037] relative z-10">{item.title}</h3>
-                <p className="text-sm text-[#5d4037]/70 leading-relaxed font-serif relative z-10">
-                  {item.desc}
-                </p>
-              </div>
-            ))}
-          </div>
+              ))}
+            </div>
 
-          <div className="mt-16 p-8 bg-white border border-[#1a237e]/10 shadow-lg flex items-center justify-between max-w-4xl mx-auto w-full">
-            <div className="flex gap-4 items-center">
-              <div className="w-12 h-12 rounded-full bg-[#1a237e]/10 flex items-center justify-center text-[#1a237e]">
-                <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M7 8h10M7 12h4m1 8l-4-4H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-3l-4 4z"></path></svg>
-              </div>
-              <p className="text-sm md:text-base font-serif italic text-[#5d4037]/80 leading-relaxed">
-                "성남청소년청년재단 정자유스센터에서의 1년, <br />단순한 서포터를 넘어 주도적인 기획자로 거듭났습니다."
+            <div className="mt-12 p-8 border border-[#1a237e]/10 bg-white/40 backdrop-blur-sm">
+              <p className="text-sm font-serif italic text-[#5d4037]/80 leading-relaxed">
+                "단순한 서포터를 넘어 주도적인 기획자로 거듭난 성장의 시간들이었습니다."
               </p>
             </div>
           </div>
@@ -309,7 +319,7 @@ function renderSlide(id: SlideId) {
               </div>
               <div className="space-y-1">
                 <h4 className="font-serif text-base text-[#1a237e] font-bold">겨울학교 크리스마스 기획</h4>
-                <p className="text-[11px] text-[#5d4037]/60 font-serif leading-relaxed">스탬프 투어 카드 디자인부터 소망 트리 설치까지, 겨울 도서관의 활기를 더하는 공간 기획을 진행했습니다.</p>
+                <p className="text-[11px] text-[#5d4037]/60 font-serif leading-relaxed">스탬프 투어 카드부터 소망 트리까지, 겨울 도서관의 활기를 더하는 공간 기획에 참여했습니다.</p>
               </div>
             </div>
           </div>
