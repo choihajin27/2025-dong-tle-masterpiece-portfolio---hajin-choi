@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>최하진 포트폴리오 | 2025 동틀 도서관기획단</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Nanum+Myeongjo:wght@400;700;800&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Pretendard:wght@100;300;400;600;700;800&display=swap"
+        rel="stylesheet">
+    <style>
+        :root {
+            --oak: #5d4037;
+            --indigo: #1a237e;
+            --warm-white: #fdfbf7;
+        }
+
+        body {
+            font-family: 'Pretendard', sans-serif;
+            background-color: var(--warm-white);
+            color: var(--oak);
+            overflow-x: hidden;
+            -webkit-font-smoothing: antialiased;
+            line-height: 1.7;
+            /* 행간 넓힘 */
+        }
+
+        .font-serif {
+            font-family: 'Nanum Myeongjo', serif;
+            line-height: 1.4;
+        }
+
+        .font-display {
+            font-family: 'Playfair Display', serif;
+        }
+
+        .reveal {
+            animation: revealUp 1.4s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+        }
+
+        @keyframes revealUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* 부드러운 버튼 인터랙션 */
+        button,
+        a {
+            transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+            cursor: none;
+            /* 커스텀 커서 사용 */
+        }
+
+        button:hover {
+            transform: translateY(-2px);
+        }
+
+        /* 커스텀 커서 스타일 */
+        #cursor {
+            width: 20px;
+            height: 20px;
+            background: var(--indigo);
+            border-radius: 50%;
+            position: fixed;
+            pointer-events: none;
+            z-index: 10000;
+            mix-blend-mode: difference;
+            transition: transform 0.15s ease-out, width 0.3s ease, height 0.3s ease, background 0.3s ease;
+        }
+
+        #cursor-follower {
+            width: 40px;
+            height: 40px;
+            border: 1px solid var(--indigo);
+            border-radius: 50%;
+            position: fixed;
+            pointer-events: none;
+            z-index: 9999;
+            transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1), width 0.3s ease, height 0.3s ease, border 0.3s ease;
+            opacity: 0.5;
+        }
+
+        .cursor-hover #cursor {
+            transform: scale(2.5);
+            background: white;
+        }
+
+        .cursor-hover #cursor-follower {
+            transform: scale(0.5);
+            border-color: white;
+            opacity: 1;
+        }
+
+        .text-gradient {
+            background: linear-gradient(135deg, var(--oak), var(--indigo));
+            -webkit-background-clip: text;
+            background-clip: text;
+            /* 표준 속성 추가 */
+            -webkit-text-fill-color: transparent;
+        }
+
+        .glass {
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+        }
+
+        .grain::after {
+            content: "";
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 9998;
+            opacity: 0.04;
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+        }
+
+        .film-strip {
+            position: relative;
+            background: #1a1a1a;
+            border-top: 12px solid #222;
+            border-bottom: 12px solid #222;
+        }
+
+        .film-strip::before {
+            content: "🎞️ RECORDING";
+            position: absolute;
+            top: -30px;
+            left: 20px;
+            font-size: 10px;
+            letter-spacing: 2px;
+            color: var(--oak);
+            opacity: 0.5;
+        }
+    </style>
+
+    <link rel="stylesheet" href="/index.css">
+    <script type="importmap">
+{
+  "imports": {
+    "react/": "https://esm.sh/react@^19.2.3/",
+    "react": "https://esm.sh/react@^19.2.3",
+    "react-dom/": "https://esm.sh/react-dom@^19.2.3/"
+  }
+}
+</script>
+  <script type="module" crossorigin src="/2025-dong-tle-masterpiece-portfolio---hajin-choi/assets/index-DeCBoU7h.js"></script>
+</head>
+
+<body class="grain">
+    <div id="cursor"></div>
+    <div id="cursor-follower"></div>
+    <div id="root"></div>
+    <script>
+        const cursor = document.getElementById('cursor');
+        const follower = document.getElementById('cursor-follower');
+
+        document.addEventListener('mousemove', (e) => {
+            const x = e.clientX;
+            const y = e.clientY;
+
+            cursor.style.transform = `translate3d(${x - 10}px, ${y - 10}px, 0)`;
+            follower.style.transform = `translate3d(${x - 20}px, ${y - 20}px, 0)`;
+        });
+
+        document.addEventListener('mouseover', (e) => {
+            if (e.target.tagName === 'BUTTON' || e.target.tagName === 'A' || e.target.closest('button')) {
+                document.body.classList.add('cursor-hover');
+            } else {
+                document.body.classList.remove('cursor-hover');
+            }
+        });
+
+        // 휠 이벤트 시 커서 작게 만들기
+        document.addEventListener('wheel', () => {
+            cursor.style.transform += ' scale(0.5)';
+            setTimeout(() => {
+                // transform이 mousemove에 의해 계속 업데이트되므로 특별한 처리는 필요 없음
+            }, 100);
+        });
+    </script>
+</body>
+
+</html>
