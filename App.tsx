@@ -89,7 +89,7 @@ function renderSlide(id: SlideId) {
     case SlideId.PROFILE:
       return (
         <div className="h-full grid grid-cols-1 md:grid-cols-12 reveal">
-          <div className="md:col-span-12 lg:col-span-5 relative overflow-hidden group">
+          <div className="md:col-span-12 lg:col-span-6 relative overflow-hidden group">
             <img
               src={import.meta.env.BASE_URL + "assets/winter_meeting.jpg"}
               alt="Winter Planning Meeting"
@@ -99,7 +99,7 @@ function renderSlide(id: SlideId) {
               <span className="text-[9px] uppercase tracking-[0.5em] font-bold">In Action</span>
             </div>
           </div>
-          <div className="md:col-span-12 lg:col-span-7 flex flex-col justify-center px-12 md:px-24 bg-[#fdfbf7] z-10">
+          <div className="md:col-span-12 lg:col-span-6 flex flex-col justify-center px-12 md:px-24 bg-[#fdfbf7] z-10">
             <div className="mb-12">
               <p className="text-[10px] text-[#1a237e] font-extrabold tracking-[0.5em] uppercase mb-4">The Curator</p>
               <h2 className="font-serif text-4xl md:text-6xl text-[#5d4037] font-bold leading-tight">
@@ -118,66 +118,64 @@ function renderSlide(id: SlideId) {
               </div>
             </div>
           </div>
-          <div className="md:col-span-12 lg:col-span-5 relative overflow-hidden group">
+        </div>
+      );
+
+    case SlideId.MOTIVATION:
+      return (
+        <div className="h-full grid grid-cols-1 lg:grid-cols-12 reveal bg-[#1a237e] text-white">
+          <div className="lg:col-span-7 relative overflow-hidden">
             <img
-              src={import.meta.env.BASE_URL + "assets/winter_meeting.jpg"}
-              alt="Winter Planning Meeting"
-              className="w-full h-full object-cover grayscale-[0.5] group-hover:grayscale-0 transition-all duration-1000"
+              src={import.meta.env.BASE_URL + "assets/writer_meeting.jpg"}
+              alt="Beyond Text"
+              className="w-full h-full object-cover opacity-60 transition-transform duration-[5000ms] hover:scale-105"
             />
-            <div className="absolute top-8 left-8 text-white/80 z-20">
-              <span className="text-[9px] uppercase tracking-[0.5em] font-bold">In Action</span>
-            </div>
+            <div className="absolute inset-0 bg-gradient-to-r from-[#1a237e] to-transparent z-10" />
+          </div>
+          <div className="lg:col-span-5 flex flex-col justify-center px-12 md:px-24 relative z-20">
+            <span className="text-[10px] font-bold tracking-[0.5em] uppercase mb-8 text-white/50">03 Beyond Text</span>
+            <h2 className="font-serif text-4xl md:text-5xl font-bold leading-tight mb-8">
+              문장에서<br />
+              <span className="italic font-normal text-[#fdfbf7]">공간으로 확고히</span>
+            </h2>
+            <p className="text-sm md:text-base text-white/70 leading-relaxed font-serif italic mb-8">
+              캐나다 작가 초청 강연과 같은 글로벌한 문화 행사를 직접 경험하며,<br />
+              텍스트 안에 갇혀있던 지식이 사람과 사람 사이의 온기로 변하는 과정을 목도했습니다.
+            </p>
+            <div className="w-12 h-[1px] bg-white/30" />
           </div>
         </div>
       );
 
     case SlideId.STRATEGY:
       return (
-        <div className="h-full grid grid-cols-1 lg:grid-cols-12 reveal bg-[#fdfbf7] overflow-y-auto">
-          {/* Left: Interactive Visual */}
-          <div className="lg:col-span-4 relative overflow-hidden group border-r border-[#1a237e]/5">
-            <img
-              src={import.meta.env.BASE_URL + "assets/writer_meeting.jpg"}
-              alt="Strategy & Action"
-              className="w-full h-full object-cover transition-transform duration-[4000ms] group-hover:scale-110"
-            />
-            <div className="absolute inset-0 bg-[#1a237e]/20 mix-blend-multiply transition-opacity group-hover:opacity-40" />
-            <div className="absolute inset-0 p-12 flex flex-col justify-end text-white z-10">
-              <span className="text-[10px] font-bold tracking-[0.4em] uppercase mb-4 opacity-70">Case Study</span>
-              <h3 className="font-serif text-2xl md:text-3xl font-bold leading-tight mb-4">"글로벌과 로컬이<br />만나는 지점"</h3>
-              <p className="text-[11px] font-serif italic opacity-60">캐나다 작가 초청 강연 등 하반기 주요 활동의 현장</p>
-            </div>
-          </div>
-
-          {/* Right: Seasons Grid */}
-          <div className="lg:col-span-8 p-12 md:p-20 flex flex-col justify-center">
-            <div className="mb-12">
+        <div className="h-full flex flex-col justify-center reveal bg-[#fdfbf7] p-12 md:px-24 overflow-y-auto">
+          <div className="max-w-6xl mx-auto w-full">
+            <div className="mb-12 text-center">
+              <span className="text-[10px] text-[#1a237e] font-bold tracking-[0.5em] uppercase mb-4 block">04 Action Plan</span>
               <h2 className="font-serif text-4xl md:text-5xl text-[#5d4037] mb-4 font-bold tracking-tight">동틀에서의 세 계절</h2>
-              <div className="w-16 h-[2px] bg-[#1a237e] mb-4" />
+              <div className="w-16 h-[2px] bg-[#1a237e] mx-auto mb-4" />
               <p className="text-[#5d4037]/60 text-sm font-serif italic">배움의 봄에서 성장의 겨울까지, 도서관 기획자 최하진의 기록</p>
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
               {[
                 { season: 'Spring', title: '봄: 기획의 토대', desc: '15기 단원들과의 첫 만남 "동틀의 봄". 도서관의 새로운 가능성을 꿈꾸며 기획의 기초를 다졌습니다.', color: 'border-[#5d4037]/20', img: `${import.meta.env.BASE_URL}assets/summer_prep.jpg` },
-                { season: 'Summer', title: '여름: 기획의 실전', desc: '직접 기획한 여름학교 독서캠프. "진짜 vs AI 이미지 구분하기" 등 창의적인 부스를 통해 아이들의 몰입을 이끌어냈습니다.', color: 'border-[#1a237e] bg-[#1a237e]/5 shadow-xl scale-[1.02] z-10', img: `${import.meta.env.BASE_URL}assets/summer_booth.jpg` },
+                { season: 'Summer', title: '여름: 기획의 실전', desc: '직접 기획한 여름학교 독서캠프. "진짜 vs AI 이미지 구분하기" 등 창의적인 부스를 통해 아이들의 몰입을 이끌어냈습니다.', color: 'border-[#1a237e] bg-[#1a237e]/5 shadow-xl scale-[1.05] z-10', img: `${import.meta.env.BASE_URL}assets/summer_booth.jpg` },
                 { season: 'Winter', title: '겨울: 배움의 성과', desc: '동틀의 겨울, 인문학 강연, 정자동 카페거리 기획 등 한 해의 활동을 마무리하며 도서관 기획자로서의 역량을 집약했습니다.', color: 'border-[#5d4037]/20', img: `${import.meta.env.BASE_URL}assets/winter_tree.jpg` }
               ].map((item, idx) => (
-                <div key={idx} className={`p-6 border transition-all duration-500 hover:-translate-y-1 ${item.color} relative group overflow-hidden bg-white/50`}>
+                <div key={idx} className={`p-8 border transition-all duration-500 hover:-translate-y-2 ${item.color} relative group overflow-hidden bg-white`}>
                   <div className="absolute top-0 left-0 w-full h-1 bg-[#1a237e] transform scale-x-0 group-hover:scale-x-100 transition-transform origin-left" />
-                  <span className="font-bold text-[#1a237e]/30 text-[9px] uppercase tracking-[0.4em] mb-3 block">0{idx + 1}</span>
-                  <h3 className="font-serif text-lg font-bold mb-3 text-[#5d4037]">{item.title}</h3>
-                  <p className="text-[11px] text-[#5d4037]/70 leading-relaxed font-serif">
+                  <span className="font-bold text-[#1a237e]/30 text-[10px] uppercase tracking-[0.4em] mb-4 block group-hover:text-[#1a237e] transition-colors relative z-10">Season 0{idx + 1}</span>
+                  <h3 className="font-serif text-xl font-bold mb-4 text-[#5d4037] relative z-10">{item.title}</h3>
+                  <p className="text-xs text-[#5d4037]/70 leading-relaxed font-serif relative z-10">
                     {item.desc}
                   </p>
+                  <div className="mt-8 opacity-0 group-hover:opacity-100 transition-opacity">
+                    <img src={item.img} className="w-full h-24 object-cover grayscale contrast-125" alt="" />
+                  </div>
                 </div>
               ))}
-            </div>
-
-            <div className="mt-12 p-8 border border-[#1a237e]/10 bg-white/40 backdrop-blur-sm">
-              <p className="text-sm font-serif italic text-[#5d4037]/80 leading-relaxed">
-                "단순한 서포터를 넘어 주도적인 기획자로 거듭난 성장의 시간들이었습니다."
-              </p>
             </div>
           </div>
         </div>
