@@ -186,8 +186,8 @@ function renderSlide(id: SlideId) {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
             {[
               { season: 'Spring', title: '봄: 시작의 설렘', desc: '15기 단원들과의 첫 만남 "동틀의 봄". 도서관의 새로운 가능성을 꿈꾸며 기획의 기초를 다졌습니다.', color: 'border-[#5d4037]/20', img: '/assets/summer_camp.jpg' },
-              { season: 'Summer', title: '여름: 기획의 실전', desc: '내가 담당한 "진짜 vs AI 이미지 구분하기" 부스. 아이들의 열광적인 반응을 이끌어낸 기획의 힘을 느꼈습니다.', color: 'border-[#1a237e] bg-[#1a237e]/5 scale-105 shadow-2xl z-10', img: '/assets/summer_booth.jpg' },
-              { season: 'Winter', title: '겨울: 기획의 마무리', desc: '1년의 긴 여정을 마무리하는 겨울. "동틀의 겨울" 행사를 주도하며 기획의 완성도를 높이고 유종의 미를 거두었습니다.', color: 'border-[#5d4037]/20', img: '/assets/winter_ornament.jpg' }
+              { season: 'Summer', title: '여름: 기획의 실전', desc: '직접 기획한 여름학교 독서캠프. "진짜 vs AI 이미지 구분하기" 등 창의적인 부스를 통해 아이들의 몰입을 이끌어냈습니다.', color: 'border-[#1a237e] bg-[#1a237e]/5 scale-105 shadow-2xl z-10', img: '/assets/summer_booth.jpg' },
+              { season: 'Winter', title: '겨울: 배움의 성과', desc: '인문학 강연 "정자동 카페거리" 기획 등 한 해의 활동을 마무리하며 도서관 기획자로서의 역량을 집약했습니다.', color: 'border-[#5d4037]/20', img: '/assets/humanities_lecture.jpg' }
             ].map((item, idx) => (
               <div key={idx} className={`p-8 border transition-all duration-500 hover:-translate-y-2 ${item.color} relative group overflow-hidden`}>
                 <div className="absolute top-0 left-0 w-full h-24 opacity-10 group-hover:opacity-20 transition-opacity">
@@ -219,48 +219,30 @@ function renderSlide(id: SlideId) {
       return (
         <div className="h-full bg-black text-white flex flex-col justify-center reveal relative overflow-hidden">
           {/* 다이나믹 배경 레이어 */}
-          <div className="absolute inset-0 z-0 opacity-40 flex">
-            <div className="flex-1 h-full overflow-hidden border-r border-white/10">
-              <img src="/assets/summer_camp_hall.jpg" className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-1000" alt="" />
+          <div className="absolute inset-0 z-0 opacity-20 flex">
+            <div className="flex-1 h-full overflow-hidden border-r border-white/5">
+              <img src="/assets/summer_camp_hall.jpg" className="w-full h-full object-cover grayscale" alt="" />
             </div>
-            <div className="flex-1 h-full overflow-hidden border-r border-white/10 hidden md:block">
+            <div className="flex-1 h-full overflow-hidden border-r border-white/5 hidden md:block">
               <img src="/assets/summer_camp_snacks.jpg" className="w-full h-full object-cover grayscale" alt="" />
             </div>
             <div className="flex-1 h-full overflow-hidden md:block hidden">
               <img src="/assets/summer_camp_stage.jpg" className="w-full h-full object-cover grayscale" alt="" />
             </div>
           </div>
-          <div className="absolute inset-0 bg-gradient-to-t from-[#1a237e] via-[#1a237e]/40 to-black/80 z-[1]" />
+          <div className="absolute inset-0 bg-gradient-to-t from-[#1a237e] via-black/40 to-black z-[1]" />
 
-          <div className="max-w-7xl mx-auto px-12 md:px-24 relative z-10 w-full">
-            <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
-              <div className="lg:col-span-5 space-y-8">
-                <div className="space-y-4">
-                  <span className="text-white/40 font-serif italic text-sm tracking-[0.5em] uppercase">Digital Archive Project</span>
-                  <h2 className="font-serif text-5xl md:text-7xl leading-[1.1] font-bold">
-                    기록의 힘, <br />
-                    <span className="text-white/50 italic font-normal">여름의 조각들</span>
-                  </h2>
-                </div>
+          <div className="max-w-[1400px] mx-auto px-12 md:px-24 relative z-10 w-full flex flex-col items-center">
+            <div className="w-full text-center mb-12 space-y-4">
+              <span className="text-white/40 font-serif italic text-sm tracking-[0.5em] uppercase block">Digital Archive Project</span>
+              <h2 className="font-serif text-5xl md:text-7xl leading-tight font-bold">
+                기록의 힘, <span className="text-[#1a237e] italic font-normal">여름의 조각들</span>
+              </h2>
+            </div>
 
-                <p className="text-[#fdfbf7]/80 text-base md:text-lg leading-relaxed font-serif italic max-w-md">
-                  여름학교 독서캠프의 현장감을 담기 위해 전 과정을 기록했습니다. <strong>영상 촬영부터 편집까지 직접 주도</strong>하며, 긴 대기 시간을 아이들의 환호로 바꾸는 아카이빙의 힘을 실천했습니다.
-                </p>
-
-                <div className="grid grid-cols-2 gap-4 pt-4">
-                  <div className="bg-white/5 backdrop-blur-md p-4 border border-white/10">
-                    <p className="text-[10px] uppercase tracking-widest text-white/40 mb-2">Stage</p>
-                    <p className="font-serif text-sm">연합 독서 프로젝트</p>
-                  </div>
-                  <div className="bg-white/5 backdrop-blur-md p-4 border border-white/10">
-                    <p className="text-[10px] uppercase tracking-widest text-white/40 mb-2">Role</p>
-                    <p className="font-serif text-sm">기획 및 총괄 편집</p>
-                  </div>
-                </div>
-              </div>
-
-              <div className="lg:col-span-7">
-                <div className="relative aspect-[16/9] w-full bg-black shadow-[0_0_100px_rgba(0,0,0,0.8)] border-4 border-white/10 overflow-hidden group">
+            <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center w-full">
+              <div className="lg:col-span-8">
+                <div className="relative aspect-[16/9] w-full bg-black shadow-[0_0_100px_rgba(26,35,126,0.3)] border border-white/10 overflow-hidden group">
                   <video
                     src="/assets/video1.mp4"
                     autoPlay
@@ -276,6 +258,31 @@ function renderSlide(id: SlideId) {
                   </div>
                 </div>
               </div>
+
+              <div className="lg:col-span-4 space-y-10">
+                <p className="text-[#fdfbf7]/80 text-base md:text-lg leading-relaxed font-serif italic">
+                  여름학교 독서캠프의 현장감을 담기 위해 전 과정을 기록했습니다. <br /><br />
+                  <span className="text-white font-bold text-xl block mb-2 underline decoration-[#1a237e] underline-offset-8">"영상 촬영부터 편집까지 직접 주도"</span>
+                  긴 대기 시간을 아이들의 환호로 바꾸는 아카이벤팅의 힘을 실천했습니다.
+                </p>
+
+                <div className="space-y-4">
+                  <div className="bg-white/5 backdrop-blur-md p-6 border border-white/10 flex justify-between items-center group hover:bg-white/10 transition-colors">
+                    <div>
+                      <p className="text-[10px] uppercase tracking-widest text-white/40 mb-1">Stage</p>
+                      <p className="font-serif text-sm">연합 독서 프로젝트</p>
+                    </div>
+                    <div className="w-8 h-[1px] bg-white/20 group-hover:w-12 transition-all" />
+                  </div>
+                  <div className="bg-white/5 backdrop-blur-md p-6 border border-white/10 flex justify-between items-center group hover:bg-white/10 transition-colors">
+                    <div>
+                      <p className="text-[10px] uppercase tracking-widest text-white/40 mb-1">Role</p>
+                      <p className="font-serif text-sm font-bold text-[#1a237e]">기획 및 총괄 편집</p>
+                    </div>
+                    <div className="w-8 h-[1px] bg-white/20 group-hover:w-12 transition-all" />
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
@@ -283,57 +290,68 @@ function renderSlide(id: SlideId) {
 
     case SlideId.RESULT:
       return (
-        <div className="h-full p-12 md:px-24 flex flex-col justify-center reveal bg-white">
+        <div className="h-full p-12 md:px-24 flex flex-col justify-center reveal bg-white overflow-y-auto">
           <div className="mb-14 border-b border-[#5d4037]/10 pb-8 flex justify-between items-end">
             <div>
-              <h2 className="font-serif text-4xl text-[#5d4037] mb-3 font-bold underline decoration-[#1a237e]/20 underline-offset-8">동틀의 여름: 실질적 성과</h2>
-              <p className="text-sm text-[#5d4037]/50 font-serif tracking-[0.2em] italic uppercase">Digital Citizenship Archives</p>
+              <h2 className="font-serif text-4xl text-[#5d4037] mb-3 font-bold underline decoration-[#1a237e]/20 underline-offset-8">기획과 감각의 기록</h2>
+              <p className="text-sm text-[#5d4037]/50 font-serif tracking-[0.2em] italic uppercase">Action & Creative Archive</p>
             </div>
-            <div className="text-[10px] font-bold text-[#1a237e] tracking-[0.3em] uppercase">2025 Summer Collection</div>
+            <div className="text-[10px] font-bold text-[#1a237e] tracking-[0.3em] uppercase">2025 Archive Collection</div>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <div className="group space-y-6">
-              <div className="aspect-[4/3] bg-[#fdfbf7] p-4 border border-[#5d4037]/10 shadow-sm transition-all duration-700 group-hover:shadow-2xl group-hover:-translate-y-2 overflow-hidden relative">
-                <img src="/assets/summer_action.jpg" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" alt="Activity" />
-                <div className="absolute inset-0 bg-[#1a237e]/5 opacity-0 group-hover:opacity-100 transition-opacity" />
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
+            {/* 1. 여름 부스 운영 */}
+            <div className="group space-y-4">
+              <div className="aspect-[4/5] bg-[#fdfbf7] p-3 border border-[#5d4037]/10 shadow-sm transition-all duration-700 group-hover:shadow-xl group-hover:-translate-y-1 overflow-hidden relative">
+                <img src="/assets/summer_action.jpg" className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700" alt="Activity" />
+                <div className="absolute top-4 left-4 bg-[#1a237e] text-white text-[8px] font-bold px-2 py-0.5 uppercase tracking-tighter shadow-md">Project 01</div>
               </div>
-              <div className="space-y-2 text-center">
-                <h4 className="font-serif text-lg text-[#1a237e] font-bold">1. 협력의 부스 운영</h4>
-                <p className="text-xs text-[#5d4037]/60 font-serif leading-relaxed px-4">아이들이 디지털 시민성을 재미있게 배울 수 있도록 부스 전체 동선과 상호작용을 기획했습니다.</p>
-              </div>
-            </div>
-
-            <div className="group space-y-6">
-              <div className="aspect-[4/3] bg-[#fdfbf7] p-4 border border-[#5d4037]/10 shadow-sm transition-all duration-700 group-hover:shadow-2xl group-hover:-translate-y-2 overflow-hidden relative">
-                <img src="/assets/summer_cert.jpg" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" alt="Certificate" />
-                <div className="absolute inset-0 bg-[#1a237e]/5 opacity-0 group-hover:opacity-100 transition-opacity" />
-              </div>
-              <div className="space-y-2 text-center">
-                <h4 className="font-serif text-lg text-[#1a237e] font-bold">2. 디자인: 수료증 제작</h4>
-                <p className="text-xs text-[#5d4037]/60 font-serif leading-relaxed px-4">아이들의 성취감을 극대화하기 위해 직접 디자인하고 제작한 "동틀의 여름" 우수 수료증입니다.</p>
+              <div className="space-y-1">
+                <h4 className="font-serif text-base text-[#1a237e] font-bold">협력의 부스 운영</h4>
+                <p className="text-[11px] text-[#5d4037]/60 font-serif leading-relaxed">디지털 시민성을 주제로 한 부스 '진짜 vs AI'의 전체 동선과 상호작용을 기획하고 운영했습니다.</p>
               </div>
             </div>
 
-            <div className="group space-y-6">
-              <div className="aspect-[4/3] bg-[#fdfbf7] p-4 border border-[#5d4037]/10 shadow-sm transition-all duration-700 group-hover:shadow-2xl group-hover:-translate-y-2 overflow-hidden relative">
-                <img src="/assets/summer_badge.jpg" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" alt="Badge" />
-                <div className="absolute inset-0 bg-[#1a237e]/5 opacity-0 group-hover:opacity-100 transition-opacity" />
+            {/* 2. 캔뱃지 디자인 */}
+            <div className="group space-y-4">
+              <div className="aspect-[4/5] bg-[#fdfbf7] p-3 border border-[#5d4037]/10 shadow-sm transition-all duration-700 group-hover:shadow-xl group-hover:-translate-y-1 overflow-hidden relative">
+                <img src="/assets/summer_badge.jpg" className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700" alt="Badge" />
+                <div className="absolute top-4 left-4 bg-[#1a237e] text-white text-[8px] font-bold px-2 py-0.5 uppercase tracking-tighter shadow-md">Project 02</div>
               </div>
-              <div className="space-y-2 text-center">
-                <h4 className="font-serif text-lg text-[#1a237e] font-bold">3. 굿즈: 캔뱃지 디자인</h4>
-                <p className="text-xs text-[#5d4037]/60 font-serif leading-relaxed px-4">활동의 기억을 간직할 수 있도록 직접 제작한 캔뱃지입니다. 캐릭터 선정부터 레이아웃까지 전 과정을 주도했습니다.</p>
+              <div className="space-y-1">
+                <h4 className="font-serif text-base text-[#1a237e] font-bold">캔뱃지 디자인 및 제작</h4>
+                <p className="text-[11px] text-[#5d4037]/60 font-serif leading-relaxed">캠프의 기억을 간직할 수 있는 캐릭터 굿즈를 디자인했습니다. 아이들에게 가장 인기가 많았던 결과물입니다.</p>
+              </div>
+            </div>
+
+            {/* 3. 10월 카드뉴스 */}
+            <div className="group space-y-4">
+              <div className="aspect-[4/5] bg-[#fdfbf7] p-3 border border-[#5d4037]/10 shadow-sm transition-all duration-700 group-hover:shadow-xl group-hover:-translate-y-1 overflow-hidden relative">
+                <div className="w-full h-full grid grid-cols-2 grid-rows-2 gap-1 grayscale group-hover:grayscale-0 transition-all duration-700">
+                  <img src="/assets/001.png" className="w-full h-full object-cover" alt="Card News 1" />
+                  <img src="/assets/002.png" className="w-full h-full object-cover" alt="Card News 2" />
+                  <img src="/assets/003.png" className="w-full h-full object-cover" alt="Card News 3" />
+                  <img src="/assets/004.png" className="w-full h-full object-cover" alt="Card News 4" />
+                </div>
+                <div className="absolute top-4 left-4 bg-[#1a237e] text-white text-[8px] font-bold px-2 py-0.5 uppercase tracking-tighter shadow-md">Project 03</div>
+                <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center p-6 text-center">
+                  <p className="text-white text-[10px] font-bold italic border-y border-white/30 py-4">"10월: 바다의 서사를 큐레이션하다"</p>
+                </div>
+              </div>
+              <div className="space-y-1">
+                <h4 className="font-serif text-base text-[#1a237e] font-bold">10월 카드뉴스 기획 및 편집</h4>
+                <p className="text-[11px] text-[#5d4037]/60 font-serif leading-relaxed">바다 테마의 북 큐레이션 카드뉴스를 제작하여, 도서관의 콘텐츠를 전 세대가 공감할 수 있는 시각 언어로 풀어냈습니다.</p>
               </div>
             </div>
           </div>
 
           <div className="mt-12 p-8 border-t border-[#1a237e]/10 flex items-center justify-between opacity-80">
             <div className="flex gap-4">
-              <span className="text-[10px] font-bold text-[#1a237e] border border-[#1a237e]/30 px-3 py-1 rounded-full uppercase">Planning</span>
-              <span className="text-[10px] font-bold text-[#1a237e] border border-[#1a237e]/30 px-3 py-1 rounded-full uppercase">Design</span>
-              <span className="text-[10px] font-bold text-[#1a237e] border border-[#1a237e]/30 px-3 py-1 rounded-full uppercase">Execution</span>
+              {['Planning', 'Identity Design', 'Content Curation', 'Social Media'].map(tag => (
+                <span key={tag} className="text-[9px] font-bold text-[#1a237e] border border-[#1a237e]/20 px-3 py-1 rounded-full uppercase tracking-tighter">{tag}</span>
+              ))}
             </div>
-            <p className="text-[10px] text-[#5d4037]/50 font-extrabold tracking-[0.2em]">DONG-TLE SUMMER 2025</p>
+            <p className="text-[10px] text-[#5d4037]/50 font-extrabold tracking-[0.2em]">DONG-TLE 15TH PERFORMANCE</p>
           </div>
         </div>
       );
@@ -343,12 +361,14 @@ function renderSlide(id: SlideId) {
         <div className="h-full flex flex-col items-center justify-start reveal relative px-12 bg-[#fdfbf7] pt-28 overflow-y-auto">
           {/* Decorative Instagram Style Card News Element */}
           <div className="absolute top-32 right-12 w-64 h-80 bg-white shadow-2xl rounded-2xl p-6 rotate-6 hidden xl:block border border-[#1a237e]/10 group hover:rotate-0 transition-transform duration-700">
-            <div className="w-full h-48 bg-[#fdfbf7] rounded-lg mb-4 flex items-center justify-center overflow-hidden">
-              <div className="absolute inset-0 bg-[#009688]/10 opacity-40" /> {/* Aqua theme overlay */}
-              <div className="text-center z-10 px-4">
-                <p className="text-[10px] text-[#009688] font-bold tracking-widest uppercase mb-1">Recommended</p>
-                <h5 className="font-serif text-lg text-[#1a237e] font-bold">10월 카드뉴스: 바다</h5>
-                <div className="w-8 h-[2px] bg-[#009688] mx-auto mt-2" />
+            <div className="w-full h-48 bg-[#fdfbf7] rounded-lg mb-4 flex items-center justify-center overflow-hidden relative">
+              <img src="/assets/006.png" className="w-full h-full object-cover opacity-80 group-hover:opacity-100 transition-opacity" alt="Card News Detail" />
+              <div className="absolute inset-0 bg-[#1a237e]/10 mix-blend-multiply" />
+              <div className="absolute inset-0 flex items-center justify-center">
+                <div className="text-center z-10 px-4 bg-white/80 backdrop-blur-sm py-2 rounded shadow-lg translate-y-4 group-hover:translate-y-0 transition-transform">
+                  <p className="text-[8px] text-[#1a237e] font-bold tracking-widest uppercase mb-0.5">Focus</p>
+                  <h5 className="font-serif text-sm text-[#5d4037] font-bold italic">바다 테마 큐레이션</h5>
+                </div>
               </div>
             </div>
             <p className="text-[10px] text-[#5d4037]/60 leading-relaxed font-serif">
@@ -390,7 +410,7 @@ function renderSlide(id: SlideId) {
                 {/* Curation Photo */}
                 <div className="relative group mx-auto">
                   <div className="relative w-56 h-72 rotate-[3deg] group-hover:rotate-0 transition-all duration-1000 border-8 border-white shadow-2xl overflow-hidden bg-white">
-                    <img src="/assets/book_curation.jpg" className="w-full h-full object-cover" alt="Book Curation" />
+                    <img src="/assets/001.png" className="w-full h-full object-cover" alt="Book Curation" />
                     <div className="absolute inset-x-0 bottom-0 h-1/3 bg-gradient-to-t from-black/20 to-transparent" />
                   </div>
                   <div className="absolute -top-4 -right-4 bg-[#1a237e] text-white text-[8px] font-bold px-3 py-1 rounded-full uppercase tracking-tighter z-10 shadow-lg">Curation Artist</div>
