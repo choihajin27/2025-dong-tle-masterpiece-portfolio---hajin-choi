@@ -171,8 +171,12 @@ function renderSlide(id: SlideId) {
                   <p className="text-xs text-[#5d4037]/70 leading-relaxed font-serif relative z-10">
                     {item.desc}
                   </p>
-                  <div className="mt-8 opacity-0 group-hover:opacity-100 transition-opacity">
-                    <img src={item.img} className="w-full h-24 object-cover grayscale contrast-125" alt="" />
+                  <div className="mt-8 transition-all duration-700">
+                    <img
+                      src={item.img}
+                      className="w-full h-28 object-cover grayscale opacity-40 group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-700"
+                      alt=""
+                    />
                   </div>
                 </div>
               ))}
