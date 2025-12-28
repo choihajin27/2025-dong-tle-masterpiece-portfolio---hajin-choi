@@ -204,9 +204,9 @@ function renderSlide(id: SlideId) {
 
           <div className="max-w-[1400px] mx-auto px-12 md:px-24 relative z-10 w-full flex flex-col items-center">
             <div className="w-full text-center mb-12 space-y-4">
-              <span className="text-white/40 font-serif italic text-sm tracking-[0.5em] uppercase block">Digital Archive Project</span>
+              <span className="text-white/40 font-serif italic text-sm tracking-[0.5em] uppercase block">Video Production Project</span>
               <h2 className="font-serif text-5xl md:text-7xl leading-tight font-bold">
-                기록의 힘, <span className="text-[#1a237e] italic font-normal">여름의 조각들</span>
+                여름의 조각들, <span className="text-[#1a237e] italic font-normal">영상으로 담다</span>
               </h2>
             </div>
 
@@ -230,14 +230,15 @@ function renderSlide(id: SlideId) {
               </div>
               <div className="lg:col-span-4 space-y-10">
                 <p className="text-[#fdfbf7]/80 text-base md:text-lg leading-relaxed font-serif italic">
-                  여름학교 독서캠프의 현장감을 담기 위해 전 과정을 기록했습니다. <br /><br />
-                  <span className="text-white font-bold text-xl block mb-2 underline decoration-[#1a237e] underline-offset-8">"영상 촬영부터 편집까지 직접 주도"</span>
-                  긴 대기 시간을 아이들의 환호로 바꾸는 아카이벤팅의 힘을 실천했습니다.
+                  2일간 캠프에서 보여준 아이들의 열정을 한 편의 영상으로 엮어 <br />
+                  모두에게 아름다운 마무리로 선물했습니다. <br /><br />
+                  <span className="text-white font-bold text-xl block mb-2 underline decoration-[#1a237e] underline-offset-8">"현장의 생동감을 기록으로 증명"</span>
+                  촬영부터 편집까지 직접 주도하며 독서캠프의 가치를 시각적으로 전달했습니다.
                 </p>
                 <div className="grid grid-cols-2 gap-4">
                   <div className="p-4 bg-white/5 border border-white/10 rounded-sm">
                     <p className="text-[10px] text-white/40 uppercase tracking-widest mb-1">Equipment</p>
-                    <p className="text-xs font-serif">Sony A7C II / Davinci Resolve</p>
+                    <p className="text-xs font-serif">iPhone / Final Cut Pro</p>
                   </div>
                   <div className="p-4 bg-white/5 border border-white/10 rounded-sm">
                     <p className="text-[10px] text-white/40 uppercase tracking-widest mb-1">Role</p>
@@ -303,11 +304,11 @@ function renderSlide(id: SlideId) {
               </div>
             </div>
 
-            {/* 4. 겨울 크리스마스 기획 */}
+            {/* 4. 동틀의 겨울 */}
             <div className="group space-y-4">
               <div className="aspect-[4/5] bg-[#fdfbf7] p-3 border border-[#5d4037]/10 shadow-sm transition-all duration-700 group-hover:shadow-xl group-hover:-translate-y-1 overflow-hidden relative">
                 <div className="w-full h-full grid grid-cols-2 grid-rows-2 gap-1 grayscale group-hover:grayscale-0 transition-all duration-700">
-                  <img src={import.meta.env.BASE_URL + "assets/winter_card.jpg"} className="w-full h-full object-cover" alt="Winter Card" />
+                  <img src={import.meta.env.BASE_URL + "assets/winter_decoration.jpg"} className="w-full h-full object-cover" alt="Winter Decoration" />
                   <img src={import.meta.env.BASE_URL + "assets/winter_tree.jpg"} className="w-full h-full object-cover" alt="Winter Tree" />
                   <img src={import.meta.env.BASE_URL + "assets/winter_children.jpg"} className="w-full h-full object-cover" alt="Winter Children" />
                   <div className="bg-[#1a237e]/5 flex items-center justify-center">
@@ -316,11 +317,11 @@ function renderSlide(id: SlideId) {
                 </div>
                 <div className="absolute top-4 left-4 bg-[#1a237e] text-white text-[8px] font-bold px-2 py-0.5 uppercase tracking-tighter shadow-md">Project 04</div>
                 <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center p-6 text-center">
-                  <p className="text-white text-[10px] font-bold italic border-y border-white/30 py-4">"겨울: 따뜻한 나눔의 도서관"</p>
+                  <p className="text-white text-[10px] font-bold italic border-y border-white/30 py-4">"동틀의 겨울: 함께 만든 공간"</p>
                 </div>
               </div>
               <div className="space-y-1">
-                <h4 className="font-serif text-base text-[#1a237e] font-bold">겨울학교 크리스마스 기획</h4>
+                <h4 className="font-serif text-base text-[#1a237e] font-bold">동틀의 겨울</h4>
                 <p className="text-[11px] text-[#5d4037]/60 font-serif leading-relaxed">스탬프 투어 카드부터 소망 트리까지, 겨울 도서관의 활기를 더하는 공간 기획에 참여했습니다.</p>
               </div>
             </div>
