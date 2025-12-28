@@ -308,12 +308,10 @@ function renderSlide(id: SlideId) {
             <div className="group space-y-4">
               <div className="aspect-[4/5] bg-[#fdfbf7] p-3 border border-[#5d4037]/10 shadow-sm transition-all duration-700 group-hover:shadow-xl group-hover:-translate-y-1 overflow-hidden relative">
                 <div className="w-full h-full grid grid-cols-2 grid-rows-2 gap-1 grayscale group-hover:grayscale-0 transition-all duration-700">
-                  <img src={import.meta.env.BASE_URL + "assets/winter_decoration.jpg"} className="w-full h-full object-cover" alt="Winter Decoration" />
+                  <img src={import.meta.env.BASE_URL + "assets/winter_card.jpg"} className="w-full h-full object-cover" alt="Winter Card" />
                   <img src={import.meta.env.BASE_URL + "assets/winter_tree.jpg"} className="w-full h-full object-cover" alt="Winter Tree" />
                   <img src={import.meta.env.BASE_URL + "assets/winter_children.jpg"} className="w-full h-full object-cover" alt="Winter Children" />
-                  <div className="bg-[#1a237e]/5 flex items-center justify-center">
-                    <span className="text-[10px] text-[#1a237e]/40 font-serif italic">Christmas</span>
-                  </div>
+                  <img src={import.meta.env.BASE_URL + "assets/winter_decoration.jpg"} className="w-full h-full object-cover" alt="Winter Decoration" />
                 </div>
                 <div className="absolute top-4 left-4 bg-[#1a237e] text-white text-[8px] font-bold px-2 py-0.5 uppercase tracking-tighter shadow-md">Project 04</div>
                 <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center p-6 text-center">
